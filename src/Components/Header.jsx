@@ -1,4 +1,4 @@
-import { useAuth } from ".../context/AuthContext";
+import { useAuth } from ".../context/AuthContext.jsx";
 
 const Header = () => {
   const { user, loginWithGoogle, loginWithMicrosoft, logout } = useAuth();
