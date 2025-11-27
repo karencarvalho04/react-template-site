@@ -1,4 +1,5 @@
-import { useAuth } from ".../context/AuthContext.jsx";
+// src/Components/Header.jsx
+import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
   const { user, loginWithGoogle, loginWithMicrosoft, logout } = useAuth();
@@ -21,7 +22,10 @@ const Header = () => {
             <button onClick={loginWithGoogle}>
               Entrar com Google
             </button>
-            <button onClick={loginWithMicrosoft} style={{ marginLeft: "0.5rem" }}>
+            <button
+              onClick={loginWithMicrosoft}
+              style={{ marginLeft: "0.5rem" }}
+            >
               Entrar com Microsoft
             </button>
           </>
