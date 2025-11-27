@@ -26,7 +26,15 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  const loginWithGoogle = () => signInWithPopup(auth, googleProvider);
+const loginWithGoogle = async () => {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    console.log("Google user:", result.user);
+  } catch (error) {
+    console.error("Erro login Google:", error);
+    alert("Erro ao entrar com Google: " + error.code);
+  }
+};
   const loginWithMicrosoft = () => signInWithPopup(auth, microsoftProvider);
   const logout = () => signOut(auth);
 
