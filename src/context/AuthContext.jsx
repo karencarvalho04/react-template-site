@@ -17,7 +17,6 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // escuta mudanças de login/logout
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -28,22 +27,13 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const loginWithGoogle = () => signInWithPopup(auth, googleProvider);
-
-  const loginWithMicrosoft = () =>
-    signInWithPopup(auth, microsoftProvider);
-
+  const loginWithMicrosoft = () => signInWithPopup(auth, microsoftProvider);
   const logout = () => signOut(auth);
 
-  const value = {
-    user,
-    loading,
-    loginWithGoogle,
-    loginWithMicrosoft,
-    logout,
-  };
-
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider
+      value={{ user, loading, loginWithGoogle, loginWithMicrosoft, logout }}
+    >
       {!loading && children}
     </AuthContext.Provider>
   );
