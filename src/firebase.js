@@ -4,11 +4,12 @@ import { getAuth, GoogleAuthProvider, OAuthProvider } from "firebase/auth";
 
 // 🔴 Cole aqui o firebaseConfig do seu projeto
 const firebaseConfig = {
-  apiKey: "SUA_API_KEY",
-  authDomain: "SEU_AUTH_DOMAIN",
-  projectId: "SEU_PROJECT_ID",
-  appId: "SUA_APP_ID",
-  // se tiver mais campos, pode manter
+  apiKey: "AIzaSyBwz41c2X-RvuIhigM05KdhMXlNLMjJ4QY",
+  authDomain: "karen-site-9e8f0.firebaseapp.com",
+  projectId: "karen-site-9e8f0",
+  storageBucket: "karen-site-9e8f0.firebasestorage.app",
+  messagingSenderId: "199721152796",
+  appId: "1:199721152796:web:5160c136edb7fe4a500ad9"
 };
 
 const app = initializeApp(firebaseConfig);
