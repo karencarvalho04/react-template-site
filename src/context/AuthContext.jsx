@@ -3,7 +3,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 import {
   auth,
   googleProvider,
-  microsoftProvider,
 } from "../firebase";
 import {
   signInWithPopup,
@@ -35,12 +34,11 @@ const loginWithGoogle = async () => {
     alert("Erro ao entrar com Google: " + error.code);
   }
 };
-  const loginWithMicrosoft = () => signInWithPopup(auth, microsoftProvider);
   const logout = () => signOut(auth);
 
   return (
     <AuthContext.Provider
-      value={{ user, loading, loginWithGoogle, loginWithMicrosoft, logout }}
+      value={{ user, loading, loginWithGoogle,  logout }}
     >
       {!loading && children}
     </AuthContext.Provider>
